@@ -1,0 +1,10 @@
+﻿  leffile.cpp
+  Source.cpp
+  verilog.cpp
+C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(73,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(80,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(94,20): warning C4018: '<': signed/unsigned mismatch
+  DG-2.vcxproj -> C:\Users\abugabal\source\repos\DG-2\Debug\DG-2.exe
