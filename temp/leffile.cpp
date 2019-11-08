@@ -44,7 +44,7 @@ void leffile::parsying_pin(string read, pin& temp_pin) {
 		found = read.find(' ');
 		if (found != string::npos) {
 			temp_pin.rect[i] = read.substr(0, found);
-			read = read.substr(0 + found);
+			read = read.substr(0 + found + 1);
 
 		}
 	}
@@ -120,7 +120,10 @@ void leffile::set_pin(string temp, string read) {
 		}
 		else
 			if (temp == "RECT")
+			{
+				read = read.substr(read.find(' ') + 1);
 				parsying_pin(read, temp_pin);
+			}
 		getline(openfile, read);
 		temp = parsing_lines(read);
 	}
