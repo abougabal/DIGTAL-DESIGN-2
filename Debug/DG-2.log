@@ -1,10 +1,30 @@
 ﻿  leffile.cpp
+D:\DIGTAL-DESIGN-2\leffile.cpp(16,45): error C2664: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign(const unsigned int,const _Elem)': cannot convert argument 2 from 'std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>' to 'const unsigned int'
+D:\DIGTAL-DESIGN-2\leffile.cpp(16,45): error C2664:         with
+D:\DIGTAL-DESIGN-2\leffile.cpp(16,45): error C2664:         [
+D:\DIGTAL-DESIGN-2\leffile.cpp(16,45): error C2664:             _Elem=char
+D:\DIGTAL-DESIGN-2\leffile.cpp(16,45): error C2664:         ]
+D:\DIGTAL-DESIGN-2\leffile.cpp(16,28): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\xstring(2819,19): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign'
+D:\DIGTAL-DESIGN-2\leffile.cpp(29,55): error C2664: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign(const unsigned int,const _Elem)': cannot convert argument 2 from 'std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>' to 'const unsigned int'
+D:\DIGTAL-DESIGN-2\leffile.cpp(29,55): error C2664:         with
+D:\DIGTAL-DESIGN-2\leffile.cpp(29,55): error C2664:         [
+D:\DIGTAL-DESIGN-2\leffile.cpp(29,55): error C2664:             _Elem=char
+D:\DIGTAL-DESIGN-2\leffile.cpp(29,55): error C2664:         ]
+D:\DIGTAL-DESIGN-2\leffile.cpp(29,39): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\xstring(2819,19): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign'
+D:\DIGTAL-DESIGN-2\leffile.cpp(48,34): error C2664: 'std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>> std::basic_string<_Elem,std::char_traits<char>,std::allocator<char>>::erase(const std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,const std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>)': cannot convert argument 1 from 'std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>' to 'const unsigned int'
+D:\DIGTAL-DESIGN-2\leffile.cpp(48,34): error C2664:         with
+D:\DIGTAL-DESIGN-2\leffile.cpp(48,34): error C2664:         [
+D:\DIGTAL-DESIGN-2\leffile.cpp(48,34): error C2664:             _Elem=char
+D:\DIGTAL-DESIGN-2\leffile.cpp(48,34): error C2664:         ]
+D:\DIGTAL-DESIGN-2\leffile.cpp(48,25): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   Source.cpp
   verilog.cpp
-C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(73,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(80,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\xstring(3094,19): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::erase'
+D:\DIGTAL-DESIGN-2\verilog.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
+D:\DIGTAL-DESIGN-2\verilog.cpp(73,20): warning C4018: '<': signed/unsigned mismatch
+D:\DIGTAL-DESIGN-2\verilog.cpp(80,20): warning C4018: '<': signed/unsigned mismatch
+D:\DIGTAL-DESIGN-2\verilog.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-C:\Users\abugabal\source\repos\DG-2\DG-2\verilog.cpp(94,20): warning C4018: '<': signed/unsigned mismatch
-  DG-2.vcxproj -> C:\Users\abugabal\source\repos\DG-2\Debug\DG-2.exe
+D:\DIGTAL-DESIGN-2\verilog.cpp(94,20): warning C4018: '<': signed/unsigned mismatch
