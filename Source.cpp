@@ -2,15 +2,18 @@
 #include <string>
 #include <vector>
 #include "verilog.h"
+#include "leffile.h"
 using namespace std;
 int main()
 {
 	verilog testing;
-	testing.files("input.v.txt");
+	leffile testing_2;
+	/*testing.files("input.v.txt");
 	testing.print_inputs();
 	testing.print_wires();
 	testing.print_components_module();
-	testing.print_components_name();
+	testing.print_components_name();*/
+	testing_2.set_start("simple.lef.txt");
 	system("pause");
 	return 0;
 }

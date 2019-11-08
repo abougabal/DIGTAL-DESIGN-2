@@ -12,7 +12,8 @@ string leffile::parsing_lines(string& x) {
 	string temp;
 	if (found != 0)
 	{
-		return_str.assign(x, found);
+		//return_str.assign(x, found);
+		return_str = x.substr(0, found);
 	//	temp.assign(x, x.begin() + found, findsemi);
 		temp = x.substr(found, findsemi);
 		x = temp;
@@ -22,7 +23,7 @@ string leffile::parsing_lines(string& x) {
 	return return_str;
 }
 
-void leffile::parsying_site(string x, bool flag, site & temo_site) {
+void leffile::parsying_site(string x, bool flag, site & temp_site) {
 	string width, height;
 	int find_B = x.find('B');
 	if (find_B != std::string::npos) {
@@ -34,6 +35,8 @@ void leffile::parsying_site(string x, bool flag, site & temo_site) {
 		if (flag) {
 			//Site[Site_counter].size[0] = width;
 			//Site[Site_counter].size[1] = height;
+			temp_site.size[0] = width;
+			temp_site.size[1] = height;
 		}
 		else {
 			Macro[Macro_counter].size[0] = width;
@@ -49,7 +52,7 @@ void leffile::parsying_pin(string read) {
 		found = read.find(' ');
 		if (found != string::npos) {
 			Pin[Pin_counter].rect[i].assign(read, found);
-			read.erase(read.begin(), found);
+			//read.erase(read.begin(), found);
 		}
 	}
 }
@@ -76,6 +79,7 @@ void leffile::set_site(string temp, string read) {
 		getline(cin, read);
 		temp = parsing_lines(read);
 	}
+	Site.push_back(temp_site);
 }
 
 void leffile::set_layer(string temp, string read) {
@@ -115,7 +119,7 @@ void leffile::set_pin(string temp, string read) {
 	}
 }
 
-void leffile::set_macro(string temp, string read) {
+/*void leffile::set_macro(string temp, string read) {
 	Macro[Macro_counter].name = read;
 	getline(cin, read);
 	temp = parsing_lines(read);
@@ -142,7 +146,7 @@ void leffile::set_macro(string temp, string read) {
 		getline(cin, read);
 		temp = parsing_lines(read);
 	}
-}
+}*/
 
 void leffile::set_start(string x) {
 	string read;
@@ -159,6 +163,8 @@ void leffile::set_start(string x) {
 
 				if (temp == "VERSION")
 					Start.version = read;
+				else if (temp == "NAMESCASESENSITIVE")
+					Start.case_sensitive=read;
 				else
 					if (temp == "BUSBITCHARS")
 						Start.busbitchars = read;
@@ -168,8 +174,9 @@ void leffile::set_start(string x) {
 						else
 							if (temp == "MANUFACTURINGGRID")
 								Start.manufacturinggrid = read;
-							else Start.units = read;
-				getline(cin, read);
+							else 
+								Start.units = read;
+				getline(openfile, read);
 				temp = parsing_lines(read);
 			}
 
@@ -180,7 +187,7 @@ void leffile::set_start(string x) {
 			}
 
 			//the layer
-			if (temp == "LAYER") {
+		/*	if (temp == "LAYER") {
 				set_layer(temp, read);
 				Layer_counter++;
 			}
@@ -189,7 +196,7 @@ void leffile::set_start(string x) {
 			if (temp == "MACRO") {
 				set_macro(temp, read);
 				Macro_counter++;
-			}
+			}*/
 
 			getline(cin, read);
 			temp = parsing_lines(read);

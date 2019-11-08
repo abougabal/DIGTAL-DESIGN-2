@@ -17,6 +17,7 @@ public:
 		string version;
 		string busbitchars;
 		string dividerchar;
+		string case_sensitive;
 		string units;
 		string manufacturinggrid;//or float
 	};
@@ -69,7 +70,7 @@ public:
 	void set_start(string x);
 	void set_site(string x, string y);
 	void set_layer(string x, string y);
-	void set_macro(string x, string y);
+	//void set_macro(string x, string y);
 	void parsying_site(string x, bool y, site&);
 	void set_pin(string x, string y);
 	void parsying_pin(string x);
