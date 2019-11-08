@@ -134,6 +134,7 @@ void leffile::set_pin(string temp, string read) {
 void leffile::set_macro(string temp, string read) {
 	//Macro[Macro_counter].name = read;
 	macro temp_macro;
+	site temp_site; // doesnot have a value just to make 1 function and be more moduler 
 	temp_macro.name = read;
 	getline(openfile, read);
 	temp = parsing_lines(read);
@@ -141,27 +142,36 @@ void leffile::set_macro(string temp, string read) {
 
 	while (temp != end_point) {
 		if (temp == "CLASS")
-			Macro[Macro_counter].PAD_CORE = read;
+		{
+			//Macro[Macro_counter].PAD_CORE = read;
+			temp_macro.PAD_CORE = read;
+		}
 		else
-			if (temp == "SITE")
-				Macro[Macro_counter].site_name = read;
+			if (temp == "SITE") {
+			//	Macro[Macro_counter].site_name = read;
+				temp_macro.site_name = read;
+			}
 			else
-				if (temp == "SIZE")
-					//		parsying_site(read, false);
+				if (temp == "SIZE") {
+					parsying_site(read, false, temp_site);
 					;
+				}
 				else
 					if (temp == "ORIGIN") {
-						Macro[Macro_counter].origin[0] = read[0];
-						Macro[Macro_counter].origin[1] = read[2];
+						//Macro[Macro_counter].origin[0] = read[0];
+						//Macro[Macro_counter].origin[1] = read[2];
+						temp_macro.origin[0] = read.substr(0, read.find(' '));
+						temp_macro.origin[1] = read.substr(read.find(' ') + 1);
 					}
 					else
 						if (temp == "PIN") {
 							set_pin(temp, read);
 							Pin_counter++;
 						}
-		getline(cin, read);
+		getline(openfile, read);
 		temp = parsing_lines(read);
 	}
+	Macro.push_back(temp_macro);
 }
 
 void leffile::set_start(string x) {
