@@ -116,7 +116,12 @@ void write_pins() // writing the pin section in the def file
 
 
 int main() {
+	int aspectratio, coreuti;
 	string file1, file2; // to take the file names
+	cout << "enter aspect ratio" << endl;
+	cin >> aspectratio;
+	cout << " enter core utilization" << endl;
+	cin >> coreuti;
 	cout << "enter the name of the v file including the .txt" << endl;
 	cin >> file1;
 	cout << "enter the name of the lef file including the .txt" << endl;
@@ -129,8 +134,6 @@ int main() {
 	write_component();//mising the fixed location of each cell
 	write_pins();//done
 	print_nets();
-	//write_nets();//can't work on anything here since it's mainly based on your part
-
 	write << "END DESIGN" << endl;
 	write.close();
 	return 0;
