@@ -63,12 +63,12 @@ public:
 	int Macro_counter = 0;
 
 	leffile();
-	string parsing_lines(string& x);
-	void set_start(string x);
-	void set_site(string x, string y);
-	void set_layer(string x, string y);
-	void set_macro(string x, string y);
-	void parsying_site(string x, bool y, site&, macro&);
-	void set_pin(string x, string y);
-	void parsying_pin(string x, pin&);
+	string parsing_lines(string& x); // to parse the lines we get
+	void set_start(string x); // reading the first part of the lef file this is the only function we need to use the other are called in this func.
+	void set_site(string x, string y); // parsing and reading the site part
+	void set_layer(string x, string y); // parsing and reading the layer part
+	void set_macro(string x, string y); // parsing and reading the macro part
+	void parsying_site(string x, bool y, site&, macro&); //parsing the site
+	void set_pin(string x, string y); // setting the pen part and reading it
+	void parsying_pin(string x, pin&); // parsying pin vector
 };

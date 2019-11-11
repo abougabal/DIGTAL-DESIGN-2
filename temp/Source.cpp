@@ -13,7 +13,7 @@ leffile lef;
 verilog v;
 ofstream write;
 vector <string> comp_temp;
-void print_nets()
+void print_nets() // to get the nets and compare them to the wires they are connected to
 {
 	int temp_wire=0;
 	string temp_string_wire;
@@ -50,14 +50,14 @@ void print_nets()
 	}
 	write << " END nets" << endl;
 }
-void write_header() {
+void write_header() // printing the start of the def file
+{
 	write << "VERSION " << lef.Start.version << " ;" << endl;
 	write << "DIVIDERCHARS " << lef.Start.dividerchar << " ;" << endl;
 	write << "DESIGN " << v.module_name << " ;" << endl;
 	write << "UNITS " << lef.Start.units << " ;" << endl;
-	//write << "DIEAREA " << lef.Start.version << " ;" << endl;
 }
-void getcomponentname()
+void getcomponentname() // to get the names of the modules alone
 {
 	for (int i = 0; i < v.components_name.size(); i++)
 	{
@@ -71,7 +71,8 @@ void getcomponentname()
 }
 
 
-void write_component() {
+void write_component() // writing the component section in the def file
+{
 	srand(time(NULL));
 	int random = rand() % 1;
 	string orient;
@@ -92,7 +93,8 @@ void write_component() {
 	write << "END COMPONENTS" << endl;
 }
 
-void write_pins() {
+void write_pins() // writing the pin section in the def file
+{
 
 	write << "PINS " << v.inputs.size()+v.outputs.size() << " ;" << endl;
 	for (int i = 0; i < v.inputs.size(); i++) {
@@ -114,13 +116,15 @@ void write_pins() {
 
 
 int main() {
-
+	string file1, file2; // to take the file names
+	cout << "enter the name of the v file including the .txt" << endl;
+	cin >> file1;
+	cout << "enter the name of the lef file including the .txt" << endl;
+	cin >> file2;
 	write.open("deffile.txt");// to open deffile text to make the DEF
-	v.files("input.v.txt"); // parsing the v file
-	lef.set_start("simple.lef.txt");
-//	v.print_inputs();
-	//v.print_components_name();
-	getcomponentname();
+	v.files(file1); // parsing the v file
+	lef.set_start(file2);
+	getcomponentname(); // to get the names of the modules and printing them on the screen
 	write_header();//missing only the diearea
 	write_component();//mising the fixed location of each cell
 	write_pins();//done
