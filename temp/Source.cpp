@@ -78,13 +78,14 @@ void write_component() {
 
 	write << "COMPONENTS " << v.components_module.size() << " ;" << endl;
 	for (int i = 0; i < v.components_module.size(); i++) {
-		if (lef.Site[i].symmetry[0] == 'X')
-			if (random == 1) orient = " N";
-			else orient = " FS";
-		else
-			if (random == 1) orient = " FN";
-			else orient = " S";
-
+		if (lef.Site.size() > i ) {
+			if (lef.Site[i].symmetry[0] == 'X')
+				if (random == 1) orient = " N";
+				else orient = " FS";
+			else
+				if (random == 1) orient = " FN";
+				else orient = " S";
+		}
 		write << " - " << comp_temp[i] << " " << v.components_module[i] << endl;
 		write << "  + FIXED ( " << "..." << " ) " << orient << " ;" << endl;//issue here
 	}
@@ -97,7 +98,14 @@ void write_pins() {
 	for (int i = 0; i < v.inputs.size(); i++) {
 		write << " - " << v.inputs[i] << " + NET " << v.components_name[i] << endl;
 		write << " + DIRECTION " << "INPUT" << endl;
-		write << " + FIEXED" << endl;
+		write << " + FIXED" << endl;
+		write << " + LAYER " << lef.Pin[i].layer_name << " ( " << lef.Pin[i].rect[0] << " " << lef.Pin[i].rect[1];
+		write << " ) ( " << lef.Pin[i].rect[2] << " " << lef.Pin[i].rect[3] << " ) ;" << endl;
+	}
+	for (int i = 0; i < v.outputs.size(); i++) {
+		write << " - " << v.outputs[i] << " + NET " << v.components_name[i] << endl;
+		write << " + DIRECTION " << "OUTPUT" << endl;
+		write << " + FIXED" << endl;
 		write << " + LAYER " << lef.Pin[i].layer_name << " ( " << lef.Pin[i].rect[0] << " " << lef.Pin[i].rect[1];
 		write << " ) ( " << lef.Pin[i].rect[2] << " " << lef.Pin[i].rect[3] << " ) ;" << endl;
 	}

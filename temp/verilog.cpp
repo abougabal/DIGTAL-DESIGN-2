@@ -41,17 +41,19 @@ void verilog::dividinputs()
 		openfile >> temp;
 		if (temp == "input")
 		{
-			openfile >> temp;
+			getline(openfile, temp);
 			inputs.push_back(temp);
 		}
 		else if (temp == "output")
 		{
-			openfile >> temp;
+			//openfile >> temp;
+			getline(openfile, temp);
 			outputs.push_back(temp);
 		}
 		else if (temp == "wire")
 		{
-			openfile >> temp;
+			//openfile >> temp;
+			getline(openfile, temp);
 			wires.push_back(temp);
 		}
 		else if (temp != "endmodule")

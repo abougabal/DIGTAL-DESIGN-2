@@ -198,8 +198,8 @@ void leffile::set_start(string x) {
 						else
 							if (temp == "MANUFACTURINGGRID")
 								Start.manufacturinggrid = read;
-							else
-								Start.units = read;
+							else if (temp == "DATABASE")
+								Start.units = read.substr(read.find(" ")+1);
 				getline(openfile, read);
 				temp2 = read;
 				temp = parsing_lines(read);

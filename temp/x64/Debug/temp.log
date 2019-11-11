@@ -1,3 +1,2 @@
-﻿  Source.cpp
-C:\Users\abugabal\source\repos\temp\temp\Source.cpp(75,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  verilog.cpp
   temp.vcxproj -> C:\Users\abugabal\source\repos\temp\x64\Debug\temp.exe
