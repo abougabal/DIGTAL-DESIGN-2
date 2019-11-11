@@ -56,6 +56,7 @@ void write_header() // printing the start of the def file
 	write << "DIVIDERCHARS " << lef.Start.dividerchar << " ;" << endl;
 	write << "DESIGN " << v.module_name << " ;" << endl;
 	write << "UNITS " << lef.Start.units << " ;" << endl;
+	write << "DIEAREA" << "(0 0) ;" << endl;
 }
 void getcomponentname() // to get the names of the modules alone
 {

@@ -1,3 +1,10 @@
 ﻿  Source.cpp
-C:\Users\abugabal\source\repos\temp\temp\Source.cpp(75,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  leffile.cpp
+C:\Users\abugabal\source\repos\temp\temp\Source.cpp(77,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\abugabal\source\repos\temp\temp\leffile.cpp(7,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\abugabal\source\repos\temp\temp\leffile.cpp(8,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\abugabal\source\repos\temp\temp\leffile.cpp(24,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  verilog.cpp
+  Generating Code...
+C:\Users\abugabal\source\repos\temp\temp\leffile.cpp(44,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   temp.vcxproj -> C:\Users\abugabal\source\repos\temp\x64\Debug\temp.exe

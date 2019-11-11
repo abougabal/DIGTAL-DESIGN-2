@@ -2,6 +2,7 @@ VERSION  5.4 ; ;
 DIVIDERCHARS  "/" ; ;
 DESIGN i2c_master ;
 UNITS MICRONS 1000 ; ;
+DIE AREA(0 0) ;
 COMPONENTS 755 ;
  - BUFX4_1 BUFX4
   + FIXED ( ... )  S ;
