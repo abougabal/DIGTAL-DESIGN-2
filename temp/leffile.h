@@ -49,10 +49,7 @@ public:
 		string site_name;
 	};
 
-	/*site* Site = new site[MAX];
-	layer* Layer = new layer[MAX];
-	pin* Pin = new pin[MAX];
-	macro* Macro = new macro[MAX];*/
+
 	vector <site> Site;
 	vector <layer> Layer;
 	vector <pin> Pin;
@@ -71,7 +68,7 @@ public:
 	void set_site(string x, string y);
 	void set_layer(string x, string y);
 	void set_macro(string x, string y);
-	void parsying_site(string x, bool y, site&);
+	void parsying_site(string x, bool y, site&, macro&);
 	void set_pin(string x, string y);
-	void parsying_pin(string x);
+	void parsying_pin(string x, pin&);
 };

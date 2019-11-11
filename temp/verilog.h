@@ -1,4 +1,3 @@
-
 #ifdef VERILOG_H
 #define VERILOG_H
 #endif
@@ -9,7 +8,7 @@
 using namespace std;
 class verilog
 {
-private:
+public:
 	//vector<int> temp;
 	vector <string> checks;
 	vector<string> inputs;
@@ -21,7 +20,7 @@ private:
 	ifstream openfile;
 	void dividinputs();
 	void components(string);
-public:
+
 	verilog();
 	void files(string);
 	void print_inputs();
@@ -31,5 +30,3 @@ public:
 	void print_components_module();
 	string getmodulename();
 };
-
-

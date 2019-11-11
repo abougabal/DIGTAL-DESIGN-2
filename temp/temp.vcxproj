@@ -132,6 +132,7 @@
     <ClInclude Include="verilog.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="input.v.txt" />
     <Text Include="simple.lef.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
