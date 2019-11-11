@@ -1,0 +1,24 @@
+module simple (
+ inp1, 
+ inp2,
+iccadclk,
+out
+);
+input inp1;
+input inp2;
+input iccadclk;
+output out;
+wire n1;
+wire n2;
+wire n3;
+wire n4;
+wire inp1;
+wire inp2;
+wire iccadclk;
+wire out;
+NAND2X1 u1 ( .A1(inp1), .A2(inp2), .ZN(n1) );
+DFFX1 f1 ( .D(n2), .CK(iccadclk), .Q(n3) );
+INVX1 u2 ( .A(n3), .ZN(n4) );
+INVX1 u3 ( .A(n4), .ZN(out) );
+NOR2X1 u4 ( .A1(n1), .A2(n3), .ZN(n2) );
+endmodule

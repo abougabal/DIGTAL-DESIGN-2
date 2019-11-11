@@ -71,7 +71,7 @@ public:
 	void set_site(string x, string y);
 	void set_layer(string x, string y);
 	void set_macro(string x, string y);
-	void parsying_site(string x, bool y, site&, macro&);
+	void parsying_site(string x, bool y, site&);
 	void set_pin(string x, string y);
-	void parsying_pin(string x, pin&);
+	void parsying_pin(string x);
 };
