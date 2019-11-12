@@ -133,11 +133,11 @@ void leffile::set_pin(string temp, string read) {
 void leffile::set_macro(string temp, string read) {
 	macro temp_macro;
 	site temp_site; // doesnot have a value just to make 1 function and be more moduler 
-	temp_macro.name = read;
+	temp_macro.name = read.substr(read.find(" ")+1);
 	string temp2;
 	getline(openfile, read);
 	temp = parsing_lines(read);
-	string end_point = "END" + temp_macro.name;
+	string end_point = "END " + temp_macro.name;
 
 	while (temp2 != end_point) {
 		if (temp == "CLASS")
@@ -148,15 +148,17 @@ void leffile::set_macro(string temp, string read) {
 		else
 			if (temp == "SITE") {
 				temp_macro.site_name = read;
+				set_site(temp, read);
 			}
 			else
 				if (temp == "SIZE") {
 					parsying_site(read, false, temp_site, temp_macro);
-					;
+
+					
 				}
 				else
 					if (temp == "ORIGIN") {
-						temp_macro.origin[0] = read.substr(0, read.find(' '));
+						temp_macro.origin[0] = read.substr(3, read.find(' '));
 						temp_macro.origin[1] = read.substr(read.find(' ') + 1);
 					}
 					else

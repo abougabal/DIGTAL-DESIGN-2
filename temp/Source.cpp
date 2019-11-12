@@ -119,17 +119,20 @@ void write_pins() // writing the pin section in the def file
 int main() {
 	int aspectratio, coreuti;
 	string file1, file2; // to take the file names
-	cout << "enter aspect ratio" << endl;
-	cin >> aspectratio;
-	cout << " enter core utilization" << endl;
-	cin >> coreuti;
-	cout << "enter the name of the v file including the .txt" << endl;
-	cin >> file1;
-	cout << "enter the name of the lef file including the .txt" << endl;
-	cin >> file2;
+//	cout << "enter aspect ratio" << endl;
+	//cin >> aspectratio;
+	//cout << " enter core utilization" << endl;
+	//cin >> coreuti;
+	//cout << "enter the name of the v file including the .txt" << endl;
+	//cin >> file1;
+	//cout << "enter the name of the lef file including the .txt" << endl;
+	//cin >> file2;
+
 	write.open("deffile.txt");// to open deffile text to make the DEF
-	v.files(file1); // parsing the v file
-	lef.set_start(file2);
+	v.files("input.v.txt"); // parsing the v file
+	lef.set_start("simple.lef.txt");
+	for (int i = 0; i < lef.Macro.size(); i++)
+		cout <<lef.Macro[i].name << endl;
 	getcomponentname(); // to get the names of the modules and printing them on the screen
 	write_header();//missing only the diearea
 	write_component();//mising the fixed location of each cell
