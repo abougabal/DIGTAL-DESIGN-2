@@ -52,10 +52,10 @@ void print_nets() // to get the nets and compare them to the wires they are conn
 }
 void write_header() // printing the start of the def file
 {
-	write << "VERSION " << lef.Start.version << " ;" << endl;
-	write << "DIVIDERCHARS " << lef.Start.dividerchar << " ;" << endl;
-	write << "DESIGN " << v.module_name << " ;" << endl;
-	write << "UNITS " << lef.Start.units << " ;" << endl;
+	write << "VERSION " << lef.Start.version << endl;
+	write << "DIVIDERCHARS " << lef.Start.dividerchar << endl;
+	write << "DESIGN " << v.module_name  << ";" <<endl;
+	write << "UNITS " << lef.Start.units  << endl;
 	write << "DIEAREA" << "(0 0) ;" << endl;
 }
 void getcomponentname() // to get the names of the modules alone
@@ -99,14 +99,14 @@ void write_pins() // writing the pin section in the def file
 
 	write << "PINS " << v.inputs.size()+v.outputs.size() << " ;" << endl;
 	for (int i = 0; i < v.inputs.size(); i++) {
-		write << " - " << v.inputs[i] << " + NET " << v.components_name[i] << endl;
+		write << " - " << v.inputs[i].substr(0, v.inputs[i].find(";")) << " + NET " << v.components_name[i] << endl;
 		write << " + DIRECTION " << "INPUT" << endl;
 		write << " + FIXED" << endl;
 		write << " + LAYER " << lef.Pin[i].layer_name << " ( " << lef.Pin[i].rect[0] << " " << lef.Pin[i].rect[1];
 		write << " ) ( " << lef.Pin[i].rect[2] << " " << lef.Pin[i].rect[3] << " ) ;" << endl;
 	}
 	for (int i = 0; i < v.outputs.size(); i++) {
-		write << " - " << v.outputs[i] << " + NET " << v.components_name[i] << endl;
+		write << " - " << v.outputs[i].substr(0, v.outputs[i].find(";")) << " + NET " << v.components_name[i] << endl;
 		write << " + DIRECTION " << "OUTPUT" << endl;
 		write << " + FIXED" << endl;
 		write << " + LAYER " << lef.Pin[i].layer_name << " ( " << lef.Pin[i].rect[0] << " " << lef.Pin[i].rect[1];
