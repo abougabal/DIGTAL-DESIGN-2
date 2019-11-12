@@ -13,6 +13,7 @@ our problem was stating: Develop a utility that accepts a Verilog synthesized ne
 How does our project works:
 So, when the project is built it asks the user for 4 inputs. 2 of which are the V and LEF file. 
 The program parses the files according and from the information we gathered from that file we then create a DEF file that contains the components, pins and nets section. In this DEF file the placement of the components wasn’t a part of our project, so we left them as (….). all the user had to do is only write the name of the files correctly other wise the program will not be able to open the file and get the necessary information.
+we assume that we have one lef file and not technology lef file and cell lef file
 Some deficiencies in the project 
 Due to building our own parsers we assumed that the file will be written in a certain way so that our classes can parse them correctly. Also, we did not include everything of the DEF and LEF file we only parse small parts of them which was included in the project. For example, we do not support “[]” bus signals and in the Verilog file we do not support for example the inout signal.
 A small preview of the files format expected to be inserted are at the end of this file and some test cases were inserted in this project to show the expected inputs and file formats.
