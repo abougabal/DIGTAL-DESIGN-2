@@ -1,0 +1,14 @@
+module nand2 (
+a,
+b,
+c
+);
+input a;
+input b;
+output c;
+
+wire vdd;
+wire gnd;
+
+NAND2X1 u2 (.A(a), .B(b), .Y(c) );
+endmodule

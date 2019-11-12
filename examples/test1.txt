@@ -1,0 +1,25 @@
+module test1 (
+x,
+x2,
+x3,
+y
+);
+
+input x;
+input x2;
+input x3;
+output y;
+
+
+wire vdd;
+wire gnd;
+wire w1;
+wire w2;
+wire w3;
+
+
+OR2X2 OR2X2_4 ( .A(x), .B(x2), .Y(w1) );
+AND2X2 AND2X2_4 ( .A(x3), .B(w1), .Y(w2) );
+NAND2X1 NAND2X1_8 ( .A(w2), .B(w3), .Y(y) );
+
+endmodule
